@@ -51,38 +51,15 @@ reset(){
 
 class CounterButton extends Component{
 
-    // constructor(){
-    //     super();
-    //     this.state = {
-    //         count : 0
-    //     }
-
-    //     this.increment = this.increment.bind(this)
-    //     this.decrement = this.decrement.bind(this)
-    // }
     render(){
       return (
         <div className="CounterButton">
-            <button onClick={this.increment}>+{this.props.by}</button>
-            <button onClick={this.decrement}>-{this.props.by}</button>
+            <button onClick={()=>this.props.incrementMethod(this.props.by)}>+{this.props.by}</button>
+            <button onClick={()=>this.props.decrementMethod(this.props.by)}>-{this.props.by}</button>
             {/* <span className="count">{this.state.count}</span> */}
         </div>
       );
      
     }
-    increment(){
-        this.setState ({
-            
-           //count : this.state.count + this.props.by
-        })
-        this.props.incrementMethod(this.props.by)
-    }
 
-    decrement(){
-      this.setState ({
-          
-         //count : this.state.count - this.props.by
-      })
-      this.props.decrementMethod(this.props.by)
-  }
   } 
